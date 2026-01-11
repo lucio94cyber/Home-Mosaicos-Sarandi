@@ -1,0 +1,83 @@
+/*Seccion Bienvenida*/
+.bienvenida{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.bienvenida img{
+    width: 500px;
+    height: auto;
+    padding: 10px;
+}
+
+.bienvenida_texto{
+    width: 400px;
+}
+
+.bienvenida_texto h2{
+    font-size: 50px;
+}
+
+.bienvenida_texto p{
+    font-size: 1rem;
+}
+
+/*Contacto Portada*/
+
+.contacto_portada{
+    display: flex;
+    position: relative;
+    align-items: center;
+    }
+
+
+.contacto_portada h3{
+    position: absolute;
+    color: #fcfcfa;
+    top: 40%;
+    left: 60%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    width: 1500px;
+    text-shadow: 0 0 10px black;
+}
+
+.contacto_portada img{
+  width: 50%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/*Lista Productos*/
+
+.lista-productos{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.lista-productos h4{
+    font-size: 35px;
+    grid-column: 1/3;
+    text-align: center;
+}
+
+.productos1{
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    text-align: center;
+    justify-items: center;
+}
+
+.productos1 img{
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    height: 350px;
+    object-fit: contain;
+}
