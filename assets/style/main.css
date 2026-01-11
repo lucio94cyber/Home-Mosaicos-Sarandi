@@ -1,0 +1,27 @@
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 50vh;
+    background: 
+        linear-gradient(
+            135deg,
+            #f7f7f7 0%,
+            #eeeeee 40%,
+            #e5e5e5 100%
+        );
+}
+
+.titulo_principal h1 {
+    font-size: 50px;
+}
+
+.titulo_principal p{
+    font-size: 2rem;
+}
+
+.titulo_principal a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    gap: 10px;
+}
