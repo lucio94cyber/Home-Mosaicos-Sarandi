@@ -206,5 +206,3 @@ MostrarCarrito();
 CalcularTotal();
 CarritoCantidad();
 
-
-
