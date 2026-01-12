@@ -11,7 +11,7 @@ header {
     justify-content:center;
     margin: 0px;
     gap: 20px;
-    background-image: url(/assets/imagenes/fondo_bienvenida.jpg);
+    background-image: url(../imagenes/fondo_bienvenida.png);
 }
 
 header img{
@@ -185,7 +185,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image:url(/assets/imagenes/fondo_footer.jpg);
+    background-image:url(/assets/imagenes/fondo_footer.png);
     margin:0;
     width: 100%;
 }
