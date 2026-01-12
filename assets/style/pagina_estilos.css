@@ -53,10 +53,12 @@ main {
 
 .titulo_principal h1 {
     font-size: 3rem;
+    padding: 10px;
 }
 
 .titulo_principal p{
     font-size: 2.5rem;
+    padding: 10px;
 }
 
 .titulo_principal a{
@@ -68,6 +70,7 @@ main {
     background-color: rgba(237, 20, 20, 0.716);
     padding: 15px;
     font: 800;
+    margin: 10px;
     transition: transform 0.7s ease;
 }
 
