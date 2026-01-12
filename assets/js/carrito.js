@@ -206,3 +206,26 @@ MostrarCarrito();
 CalcularTotal();
 CarritoCantidad();
 
+// Agregar aviso de producto al carrito
+
+document.querySelectorAll(".boton-agregar").forEach(boton => {
+    boton.addEventListener("click", () => {
+
+        const textoOriginal = boton.textContent;
+
+        //Cambia el texto del botón en pantalla
+        boton.textContent = "Agregado ✔";
+        //Agrega la clase CSS
+        boton.classList.add("agregado");
+        boton.disabled = true;
+
+        setTimeout(() => {
+            boton.textContent = textoOriginal;
+            boton.classList.remove("agregado");
+            boton.disabled = false;
+            //Ejecutá este código después de 1500 ms (1.5 segundos)”
+        }, 1500);
+
+    });
+});
+
