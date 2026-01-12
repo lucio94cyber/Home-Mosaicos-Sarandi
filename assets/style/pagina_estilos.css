@@ -185,7 +185,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image:url(/assets/imagenes/fondo_footer.png);
+    background-image: url(../imagenes/fondo_footer.png);
     margin:0;
     width: 100%;
 }
