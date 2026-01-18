@@ -18,7 +18,7 @@ header {
     justify-content:center;
     margin: 0px;
     gap: 20px;
-    background-image: url(../imagenes/fondo_bienvenida.png);
+    background-color: #fcfcfa;
 }
 
 header img{
@@ -93,7 +93,6 @@ main img{
 }
 
 
-
 /*Seccion Bienvenida*/
 .bienvenida{
     display: flex;
@@ -101,13 +100,12 @@ main img{
     align-content: center;
     justify-content: center;
     gap: 20px;
-    background-image: url(/assets/imagenes/fondo_historia.jpg);
-    background-size: 50%;
+    background-color: #fcfcfa;
 
 }
 
 .bienvenida img{
-    width: 500px;
+    width: 400px;
     height: auto;
     padding: 10px;
     margin: 10px;
