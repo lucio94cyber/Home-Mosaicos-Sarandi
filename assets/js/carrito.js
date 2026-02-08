@@ -229,3 +229,9 @@ document.querySelectorAll(".boton-agregar").forEach(boton => {
     });
 });
 
+//LIBRERIA
+
+Swal.fire({
+  title: "Bienvenido a Home Mosaicos Sarandi",
+  text: "Elegi tu mueble y escribinos",
+});
