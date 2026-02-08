@@ -223,13 +223,13 @@ document.querySelectorAll(".boton-agregar").forEach(boton => {
             boton.textContent = textoOriginal;
             boton.classList.remove("agregado");
             boton.disabled = false;
-            //Ejecutá este código después de 1500 ms (1.5 segundos)”
-        }, 1500);
+            //Ejecutá este código después de 1500 ms (1 segundo)”
+        }, 1000);
 
     });
 });
 
-//LIBRERIA
+//LIBRERIA EXTERNA
 
 Swal.fire({
   title: "Bienvenido a Home Mosaicos Sarandi",
