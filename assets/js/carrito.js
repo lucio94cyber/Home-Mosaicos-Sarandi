@@ -1,9 +1,98 @@
-//PASO 1: Crear el array del carrito + conectarlo con localStorage
-//El carrito no se pierde al recargar la página
+//PASO 1
+// CARGAR PRODUCTOS DESDE JSON
+
+// 1️⃣ Lee el archivo productos.json
+// 2️⃣ Genera el HTML de cada producto
+// 3️⃣ Agrega los data-* que usa el carrito
+// 4️⃣ Conecta los botones "Agregar"
+
+fetch("./data/productos.json")
+    //Convierte el cuerpo de la respuesta a JavaScript real
+    .then(respuesta => respuesta.json())
+    //es el JSON ya convertido
+    .then(productos => {
+
+        const contenedor = document.getElementById("contenedor-productos");
+
+        productos.forEach(prod => {
+            // Armado para el llamado de productos el class=producto-card
+            // el data se usa porque armamos todo antes desde html para llamar al los productos
+            // h5 a button es la visual para usuario
+            contenedor.innerHTML += `
+                <div class="producto-card"
+                    data-id="p${prod.id}"
+                    data-nombre="${prod.nombre}"
+                    data-precio="${prod.precio}"
+                    data-imagen="./assets/productos/${prod.imagen}"
+                >
+                    <h5>${prod.nombre}</h5>
+                    <img src="./assets/productos/${prod.imagen}">
+                    <p>$ ${prod.precio.toLocaleString()}</p>
+                    <button class="boton-agregar">Agregar</button>
+                </div>
+            `;
+        });
+
+        // para que al momento de seleccionar el producto, lea el click
+        conectarBotones();
+    })
+    .catch(error => {
+        console.error("Error cargando productos:", error);
+    });
+
+
+// PASO 2 CONECTAR BOTONES "AGREGAR" - Seleccionar todos los productos y leer el click
+
+// Esta función:
+// 1️⃣ Buscamos los botones "Agregar"
+// 2️⃣ Leemos los data-* del producto
+// 3️⃣ Llamamos al carrito
+// 4️⃣ Mostramos el aviso visual
+
+function conectarBotones() {
+    document.querySelectorAll(".boton-agregar").forEach(boton => {
+
+        boton.addEventListener("click", () => {
+
+            // Subimos al contenedor del producto
+            let tarjeta = boton.parentElement;
+
+            // Leemos los datos del producto desde el HTML, hoy estan en json
+            let nombre = tarjeta.dataset.nombre;
+            let precio = tarjeta.dataset.precio;
+            let imagen = tarjeta.dataset.imagen;
+            let id = tarjeta.dataset.id;
+
+            // Agregamos al carrito
+            agregarAlCarrito(nombre, precio, imagen, id);
+
+            // Aviso visual "Agregado ✔"
+            const textoOriginal = boton.textContent;
+            boton.textContent = "Agregado ✔";
+            boton.classList.add("agregado");
+            boton.disabled = true;
+
+            //ejecutar un bloque de código después de un tiempo determinado.
+            setTimeout(() => {
+                boton.textContent = textoOriginal;
+                boton.classList.remove("agregado");
+                boton.disabled = false;
+            }, 1000);
+        });
+
+    });
+}
+
+
+//PASO 3:Crear el array del carrito + conectarlo con localStorage + El carrito no se pierde al recargar la página
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-//PASO 10 — Agrupar productos iguales y manejar cantidades
-//Asegurar que todos los productos tengan cantidad y Si alguno no tiene cantidad, le pone 1
+// PASO 4 Función para guardar el carrito cada vez que cambie 
+function guardarCarritoLocal(){
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+//PASO 5 Agrupar productos iguales y manejar cantidades + Asegurando que todos los productos tengan cantidad y Si alguno no tiene cantidad,le pone 1
 carrito = carrito.map(producto => {
     return {
         //Copiá TODO lo que ya tiene este producto los 3 puntitos
@@ -12,32 +101,7 @@ carrito = carrito.map(producto => {
     };
 });
 
-// Función para guardar el carrito cada vez que cambie 
-function guardarCarritoLocal(){
-    localStorage.setItem("carrito", JSON.stringify(carrito));
-}
-
-//Paso 2 Seleccionar todos los productos y leer el click
-
-let recorrerBotones = document.querySelectorAll('button.boton-agregar')
-
-    recorrerBotones.forEach(boton => {
-
-        boton.addEventListener("click", function () {
-
-        // 1️⃣ Obtener el contenedor del producto
-        let tarjeta = boton.parentElement
-        // 2️⃣ Leer los data-* del producto
-        let nombre = tarjeta.dataset.nombre;
-        let precio = tarjeta.dataset.precio;
-        let imagen = tarjeta.dataset.imagen;
-        let id = tarjeta.dataset.id;
-        // 3️⃣ Llamar a la función agregarAlCarrito con los datos
-        agregarAlCarrito(nombre, precio, imagen, id);
-    })
-
-})
-
+//PASO 6 - Agregar al carrito los productos
 function agregarAlCarrito(nombre, precio, imagen, id) {
 //Buscar si el producto ya existe con su id
     let productoExistente = carrito.find(prod => prod.id === id);
@@ -56,14 +120,17 @@ function agregarAlCarrito(nombre, precio, imagen, id) {
         };
         carrito.push(producto);
     }
-
-    guardarCarritoLocal();  
+    //guardarlo en caso de cerrar la pagina
+    guardarCarritoLocal();
+    // sumar cantidades de productos seleccionados
     CarritoCantidad();
+    // calcular el total de todos los productos seleccionados
     CalcularTotal();
+    // visualizar el carrito con sus productos elegidos
     MostrarCarrito();
 }
 
-
+// Paso 7 - Sumar las cantidades de productos elegidos
 function CarritoCantidad() {
     let cantidad = carrito.reduce(
         (total, producto) => total + producto.cantidad,0);
@@ -74,8 +141,9 @@ function CarritoCantidad() {
 
 CarritoCantidad();
 
-// PASO 5 — Crear el panel lateral del carrito (HTML + CSS)
-// PASO 6 — Mostrar los productos dentro del panel
+// PASO 8 — Crear el panel lateral del carrito (HTML + CSS)
+
+// PASO 9 — Mostrar los productos dentro del panel
 let iconoCarrito = document.getElementById("icono-carrito");
 let listaCarrito = document.getElementById("carrito-lista");
 
@@ -91,8 +159,8 @@ iconoCarrito.addEventListener("click", function(e){
     document.getElementById("carrito-cerrar").addEventListener("click", function(){
     listaCarrito.classList.remove("mostrar");
 });
-// PASO 7 — Calcular el total y Mostrar Productos del carrito
 
+// PASO 10 — Calcular el total y Mostrar Productos del carrito
 function CalcularTotal(){
     let total = carrito.reduce((acumulado, producto) => acumulado + (producto.precio * producto.cantidad),0);
 
@@ -103,14 +171,14 @@ function CalcularTotal(){
 
 CalcularTotal()
 
-// PASO 7 — Mostrar Productos del carrito
+// PASO 11 — Mostrar Productos del carrito
 
 function MostrarCarrito(){
     let contenedor = document.getElementById("carrito-items");
     //para leer o modificar el contenido HTML dentro de un elemento en una página web - innerHTML
     contenedor.innerHTML = "";
 
-    carrito.forEach((producto, index) => {
+    carrito.forEach((producto, indice) => {
         let item = document.createElement("div");
         item.classList.add("carrito-item");
 
@@ -129,7 +197,7 @@ function MostrarCarrito(){
             <button class="carrito-eliminar">X</button>
         `;
 
-//PASO 11 - 1️⃣ Botones + / − por producto
+//Botones + / − por producto
 
         // 3️⃣ botón +
         item.querySelector(".carrito-sumar").addEventListener("click", function () {
@@ -165,14 +233,15 @@ function MostrarCarrito(){
 
         // 4️⃣ botón eliminar (ya lo tenías bien)
         item.querySelector(".carrito-eliminar").addEventListener("click", function () {
-            eliminarProducto(index);
+            eliminarProducto(indice);
         });
 
+        //replica la variable dentro del contenedor en este caso
         contenedor.appendChild(item);
     });
 }
 
-// PASO 9 — Botón para eliminar producto individual
+// PASO 12 — Botón para eliminar producto individual
 
 function eliminarProducto(indice){
     carrito.splice(indice, 1); // elimina 1 elemento en esa posición
@@ -184,7 +253,7 @@ function eliminarProducto(indice){
 }
 
 
-// PASO 8 — Botón para “vaciar carrito”
+// PASO 13 — Botón para “vaciar carrito”
 
 let VaciarCarrito= document.getElementById("carrito-vaciar");
 
@@ -205,29 +274,6 @@ CarritoCantidad()
 MostrarCarrito();
 CalcularTotal();
 CarritoCantidad();
-
-// Agregar aviso de producto al carrito
-
-document.querySelectorAll(".boton-agregar").forEach(boton => {
-    boton.addEventListener("click", () => {
-
-        const textoOriginal = boton.textContent;
-
-        //Cambia el texto del botón en pantalla
-        boton.textContent = "Agregado ✔";
-        //Agrega la clase CSS
-        boton.classList.add("agregado");
-        boton.disabled = true;
-
-        setTimeout(() => {
-            boton.textContent = textoOriginal;
-            boton.classList.remove("agregado");
-            boton.disabled = false;
-            //Ejecutá este código después de 1500 ms (1 segundo)”
-        }, 1000);
-
-    });
-});
 
 //LIBRERIA EXTERNA
 

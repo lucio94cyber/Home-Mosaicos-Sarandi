@@ -1,0 +1,12 @@
+[
+
+
+{"id": 1,"nombre": "Mesa chica cuadrada","precio": 120000,"imagen":"mesa_chica_cuadrada.png"},
+{"id": 2,"nombre": "Mesa chica redonda" ,"precio": 150000,"imagen":"mesa_chica_redonda.png"},
+{"id": 3,"nombre": "Mesa doble cuadrada","precio": 210000,"imagen":"mesa_doble_cuadrada.png"},
+{"id": 4,"nombre": "Mesa grande rectangular" ,"precio": 250000,"imagen":"mesa_grande_rectangular.png"},
+{"id": 5,"nombre": "Mesa plana baja cuadrada","precio":200000,"imagen":"mesa_planabaja_cuadrada.png"},
+{"id": 6,"nombre": "Mesa centro redonda","precio": 150000, "imagen":"mesa_centro_redonda.png"}
+
+
+]
