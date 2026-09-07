@@ -1,12 +1,50 @@
 [
-
-
-{"id": 1,"nombre": "Mesa chica cuadrada","precio": 120000,"imagen":"mesa_chica_cuadrada.png"},
-{"id": 2,"nombre": "Mesa chica redonda" ,"precio": 150000,"imagen":"mesa_chica_redonda.png"},
-{"id": 3,"nombre": "Mesa doble cuadrada","precio": 210000,"imagen":"mesa_doble_cuadrada.png"},
-{"id": 4,"nombre": "Mesa grande rectangular" ,"precio": 250000,"imagen":"mesa_grande_rectangular.png"},
-{"id": 5,"nombre": "Mesa plana baja cuadrada","precio":200000,"imagen":"mesa_planabaja_cuadrada.png"},
-{"id": 6,"nombre": "Mesa centro redonda","precio": 150000, "imagen":"mesa_centro_redonda.png"}
-
-
+    {
+        "id": 1,
+        "nombre": "Mesa chica cuadrada",
+        "precio": 120000,
+        "imagen": "mesa_chica_cuadrada.png",
+        "medidas": "80 × 80 × 45 cm",
+        "descripcion": "Mesa de formato cuadrado, ideal para espacios pequeños. Las medidas son orientativas y pueden adaptarse según las necesidades del ambiente."
+    },
+    {
+        "id": 2,
+        "nombre": "Mesa chica redonda",
+        "precio": 150000,
+        "imagen": "mesa_chica_redonda.png",
+        "medidas": "Ø 80 × 45 cm",
+        "descripcion": "Mesa redonda de proporciones compactas, pensada para acompañar distintos ambientes. Fabricación personalizada según el espacio."
+    },
+    {
+        "id": 3,
+        "nombre": "Mesa doble cuadrada",
+        "precio": 210000,
+        "imagen": "mesa_doble_cuadrada.png",
+        "medidas": "100 × 100 × 45 cm",
+        "descripcion": "Mesa de mayor superficie y presencia, ideal para ambientes amplios. Se puede fabricar en otras dimensiones."
+    },
+    {
+        "id": 4,
+        "nombre": "Mesa grande rectangular",
+        "precio": 250000,
+        "imagen": "mesa_grande_rectangular.png",
+        "medidas": "140 × 80 × 45 cm",
+        "descripcion": "Mesa rectangular de gran formato, pensada para convertirse en protagonista del ambiente. Las dimensiones pueden personalizarse."
+    },
+    {
+        "id": 5,
+        "nombre": "Mesa plana baja cuadrada",
+        "precio": 200000,
+        "imagen": "mesa_planabaja_cuadrada.png",
+        "medidas": "100 × 100 × 35 cm",
+        "descripcion": "Mesa baja de líneas simples y elegantes. Ideal para livings y espacios contemporáneos. Fabricación a medida."
+    },
+    {
+        "id": 6,
+        "nombre": "Mesa centro redonda",
+        "precio": 150000,
+        "imagen": "mesa_centro_redonda.png",
+        "medidas": "Ø 90 × 40 cm",
+        "descripcion": "Mesa de centro redonda pensada para aportar equilibrio y diseño al ambiente. Se puede solicitar en diferentes medidas."
+    }
 ]
