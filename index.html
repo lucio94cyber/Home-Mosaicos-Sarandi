@@ -1,107 +1,23 @@
-<!DOCTYPE html>
-<html lang="es-AR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Mosaicos Sarandi</title>
-    <link rel="shortcut icon" href="assets/logo oficial/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/style/pagina_estilos.css">
-    <link rel="stylesheet" href="assets/style/carrito.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script defer src="assets/js/carrito.js"></script>
-    <script defer src="assets/js/finalizarcarrito.js"></script>
-</head>
-<body>
-
-    <header>
-        <img src="./assets/logo oficial/logo.png" alt="logo">
-
-        <ul>
-        <li><a href="./index.html"><img src="./assets/iconos/inicio.png" alt="inicio"></a></li>
-        <li><a href="#"><img src="./assets/iconos/productos.png" alt="productos"></a></li>
-        <li><a href="#"><img src="./assets/iconos/contacto.png" alt="contacto"></a></li>
-        <li id="carrito-cantidad">
-            <a href="#">
-                <img  src="./assets/iconos/carrito.png" alt="carrito" id="icono-carrito">
-                <span id="carrito-numero">0</span>
-            </a>
-        </li>
-        </ul>
-
-    </header>
-    
-    <main>
-        <div class="titulo_principal">
-        <h1>Marmol</h1>
-        <p>Tu casa, tu estilo</p>
-        <a href="#productos">Nuestros Productos</a>
-        </div>
-        <img src="./assets/imagenes/portada.png" alt="portada">
-        <img src="./assets/imagenes/Mesa_main.png" alt="Mesa_main">
-    </main>
-
-    <section class="bienvenida">
-
-        <img src="./assets/imagenes/bienvenido_principal.png" alt="bienvenido_principal">
-        
-        <div class="bienvenida_texto">
-        <h2>Bienvenido a Home Mosaicos Sarandi</h2>
-
-        <p>Home Mosaicos Sarandí es la nueva línea de mobiliario en mármol y superficies premium de Fábrica de Mosaicos Sarandí S.A.
-Con el respaldo de 80 años de trayectoria, desarrollamos piezas funcionales y elegantes para el hogar, manteniendo nuestro compromiso con la calidad y la atención personalizada.
-Para más información o asesoramiento, puede contactarse con nosotros.
-Dirección: Arredondo 2746 – Sarandí, Avellaneda – Bs. As.</p>
-</div>
-
-    </section>
-
-    <section class="contacto_portada">
-        
-        <h3>Arredondo 2746 - (1871) - Sarandi - Pcia. Bs. As. Mail.: info@fabricamosaicos.com.ar</h3>
-        
-        <img src="./assets/imagenes/marmol_contacto.png" alt="marmol_contacto">
-        <img src="./assets/imagenes/marmol_contacto2.png" alt="marmol_contacto2">
-        <img src="./assets/imagenes/marmol_contacto3.png" alt="marmol_contacto3">
-
-    </section>
-
-    <section id="productos" class="lista-productos">
-        <h4>Nuestros Productos</h4>
-
- <div id="contenedor-productos"></div>
-
-    </section>
-
-<div id="carrito-lista" class="oculto">
-    <h6>Tu pedido</h6>
-
-    <div id="carrito-items"></div>
-
-    <div class="carrito-footer">
-        <strong>Total:</strong> 
-        <span id="carrito-total">$0</span>
-    </div>
-
-    <button id="carrito-vaciar">Vaciar Carrito</button>
-    <button id="carrito-cerrar">Cerrar</button>
-    <button id="carrito-whatsapp">Finalizar Compra</button>
-
-</div>
-
-
-    <footer class="footer">
-        <div class="tarjeta_footer">
-            <img src="./assets/iconos/ubicacion.png" alt="ubicacion">
-            <p>Arredondo 2746 - (1872) - Sarandi - Pcia. Bs. As.</p>
-        </div>
-        <div class="tarjeta_footer">
-            <img src="./assets/iconos/correo.png" alt="correo">
-            <p>info@fabricamosaicos.com.ar</p>
-        </div>
-        <div class="tarjeta_footer">
-            <img src="./assets/iconos/whatsapp.png" alt="whatsapp">
-            <p>11-7844-5258</p>
-        </div>
-    </footer>
-</body>
-</html>
+<!doctype html><html lang="es-AR"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Home Mosaicos Sarandí — mobiliario en mármol y superficies premium. Diseño, calidad y atención personalizada.">
+<title>Home Mosaicos Sarandí | Mármol y diseño</title>
+<link rel="icon" href="assets/logo oficial/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style/pagina_estilos.css"><link rel="stylesheet" href="assets/style/carrito.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script defer src="assets/js/carrito.js"></script><script defer src="assets/js/finalizarcarrito.js"></script></head><body>
+<header class="site-header"><div class="nav-inner"><a class="brand" href="#inicio"><img src="assets/logo oficial/logo.png" alt="Home Mosaicos Sarandí"></a>
+<button class="menu-toggle" id="menuToggle">☰</button><nav id="mainNav"><a href="#inicio">Inicio</a><a href="#historia">Nosotros</a><a href="#productos">Productos</a><a href="#contacto">Contacto</a></nav>
+<button class="cart-trigger" id="mobileCart"><img src="assets/iconos/carrito.png" alt="Carrito"><span id="carrito-numero">0</span></button></div></header>
+<main id="inicio">
+<section class="hero"><div class="hero-copy reveal"><p class="kicker">HOME MOSAICOS SARANDÍ</p><h1>PIEZAS QUE<br><em>TRANSFORMAN</em><br>ESPACIOS.</h1><p>Diseñamos mobiliario en mármol y superficies premium para quienes buscan belleza, calidad y carácter.</p><div class="hero-actions"><a href="#productos" class="btn dark">VER COLECCIÓN</a><a href="#historia" class="text-link">CONOCÉ NUESTRA HISTORIA →</a></div></div>
+<div class="hero-visual reveal"><img src="assets/imagenes/portada.png" alt="Mobiliario de mármol" loading="eager"><div class="hero-caption"><span>01</span><span>MÁRMOL · DISEÑO · CALIDAD</span></div></div></section>
+<section class="statement" id="historia"><div class="statement-image reveal"><img src="assets/imagenes/bienvenido_principal.png" alt="Mueble de mármol" loading="lazy"></div><div class="statement-copy reveal"><p class="kicker">80 AÑOS DE TRAYECTORIA</p><h2>LA BELLEZA<br>DE LO <em>ATEMPORAL.</em></h2><p>Home Mosaicos Sarandí es la línea de mobiliario en mármol y superficies premium de Fábrica de Mosaicos Sarandí S.A. Combinamos experiencia, materiales y diseño para crear piezas funcionales y elegantes.</p><p>Arredondo 2746 · Sarandí · Avellaneda · Buenos Aires.</p></div></section>
+<section class="material-strip reveal"><div><span>01</span><h3>MATERIAL</h3><p>Superficies seleccionadas para durar.</p></div><div><span>02</span><h3>DISEÑO</h3><p>Proporciones pensadas para cada ambiente.</p></div><div><span>03</span><h3>DETALLE</h3><p>Terminaciones que hacen la diferencia.</p></div></section>
+<section class="collection" id="productos"><div class="section-head reveal"><div><p class="kicker">COLECCIÓN</p><h2>NUESTROS<br><em>PRODUCTOS.</em></h2></div><p>Una selección de mesas pensadas para convertirse en parte del espacio.</p></div><div id="contenedor-productos"></div></section>
+<section class="contact-editorial" id="contacto"><div class="contact-photo reveal"><img src="assets/imagenes/marmol_contacto.png" alt="Mármol" loading="lazy"></div><div class="contact-content reveal"><p class="kicker">VISITANOS / CONSULTANOS</p><h2>HABLEMOS<br>DE TU <em>ESPACIO.</em></h2><p>Estamos para asesorarte y ayudarte a elegir la pieza adecuada.</p><div class="contact-data"><span>Arredondo 2746 · Sarandí</span><span>info@fabricamosaicos.com.ar</span><span>11-7844-5258</span></div><a class="btn dark" href="https://wa.me/5491178445258" target="_blank">CONSULTAR POR WHATSAPP</a></div></section>
+</main><footer class="site-footer"><div class="footer-top"><img src="assets/logo oficial/logo.png" alt="Home Mosaicos Sarandí"><p>Mobiliario en mármol y superficies premium.</p><div><a href="#productos">Productos</a><a href="#historia">Nosotros</a><a href="#contacto">Contacto</a></div></div><div class="footer-bottom"><span>© 2026 Home Mosaicos Sarandí</span><span>Arredondo 2746 · Sarandí · Buenos Aires</span></div></footer>
+<div id="carrito-lista" class="oculto"><div class="cart-head"><div><small>TU SELECCIÓN</small><h6>MI PEDIDO</h6></div><button id="carrito-cerrar">×</button></div><div id="carrito-items"></div><div class="carrito-footer"><strong>Total</strong><span id="carrito-total">$0</span></div><button id="carrito-vaciar">Vaciar carrito</button><button id="carrito-whatsapp">Finalizar compra por WhatsApp</button></div>
+<script>document.getElementById("mobileCart").onclick=()=>document.getElementById("icono-carrito")?.click();document.getElementById("menuToggle").onclick=()=>document.getElementById("mainNav").classList.toggle("open");document.querySelectorAll("#mainNav a").forEach(a=>a.onclick=()=>document.getElementById("mainNav").classList.remove("open"));const o=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add("visible");o.unobserve(x.target)}}),{threshold:.12});document.querySelectorAll(".reveal").forEach(x=>o.observe(x));</script></body></html>
